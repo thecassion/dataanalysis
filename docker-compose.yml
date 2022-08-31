@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  dedupefaes:
+    image: dedupefaes
+    volumes:
+      - ./:/code
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    ports:
+      - 8002:8002
